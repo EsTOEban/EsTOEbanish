@@ -1,11 +1,29 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatButtonModule} from "@angular/material/button";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatIconModule} from "@angular/material/icon";
+import {Title} from "@angular/platform-browser";
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
         AppComponent
+      ],
+      imports: [
+        BrowserAnimationsModule,
+        MatSlideToggleModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatButtonToggleModule,
+        MatIconModule
+      ],
+      providers: [
+        Title
       ],
     }).compileComponents();
   });
@@ -16,16 +34,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'estoebanish'`, () => {
+  it(`should have as title 'Kevin Haynes - Main'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('estoebanish');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('estoebanish app is running!');
+    expect(app.title).toEqual('Kevin Haynes - Main');
   });
 });
